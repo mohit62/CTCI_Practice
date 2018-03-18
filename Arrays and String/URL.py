@@ -1,17 +1,17 @@
 import sys
 def URLify(string):
-	URL=""
+	URL=[]
 	for char in range(len(string)-1):
 		if string[char]==' ' and string[char+1]!=' ':
-			URL+="%20"
+			URL.append("%20")
 		else:
-			URL+=string[char]
-	URL+=string[-1]		
-	return URL
+			URL.append(string[char])
+	URL.append(string[-1])
+	return ''.join(URL)
 
 sent=sys.argv[1]
 print(URLify(sent))				
 '''Analysis:
 Time Complexity O(n)
-Space Complexity O(1)
+Space Complexity O(n)
 '''
